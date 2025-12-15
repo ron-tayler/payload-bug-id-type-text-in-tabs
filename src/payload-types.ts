@@ -168,10 +168,10 @@ export interface Media {
  * via the `definition` "product".
  */
 export interface Product {
-  id: number;
+  id: string;
   name?: string | null;
   description?: string | null;
-  group?: (number | null) | Group;
+  group?: (string | null) | Group;
   updatedAt: string;
   createdAt: string;
 }
@@ -180,7 +180,7 @@ export interface Product {
  * via the `definition` "group".
  */
 export interface Group {
-  id: number;
+  id: string;
   name?: string | null;
   description?: string | null;
   updatedAt: string;
@@ -220,11 +220,11 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'product';
-        value: number | Product;
+        value: string | Product;
       } | null)
     | ({
         relationTo: 'group';
-        value: number | Group;
+        value: string | Group;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -313,6 +313,7 @@ export interface MediaSelect<T extends boolean = true> {
  * via the `definition` "product_select".
  */
 export interface ProductSelect<T extends boolean = true> {
+  id?: T;
   name?: T;
   description?: T;
   group?: T;
@@ -324,6 +325,7 @@ export interface ProductSelect<T extends boolean = true> {
  * via the `definition` "group_select".
  */
 export interface GroupSelect<T extends boolean = true> {
+  id?: T;
   name?: T;
   description?: T;
   updatedAt?: T;
