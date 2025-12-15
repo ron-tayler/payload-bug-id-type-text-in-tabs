@@ -171,7 +171,7 @@ export interface Product {
   id: string;
   name?: string | null;
   description?: string | null;
-  group?: (string | null) | Group;
+  group?: (number | null) | Group;
   updatedAt: string;
   createdAt: string;
 }
@@ -224,7 +224,7 @@ export interface PayloadLockedDocument {
       } | null)
     | ({
         relationTo: 'group';
-        value: string | Group;
+        value: number | Group;
       } | null);
   globalSlug?: string | null;
   user: {
