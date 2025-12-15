@@ -9,6 +9,10 @@ export const Product: CollectionConfig = {
     },{
       name: 'description',
       type: 'text'
+    },{
+      name: 'group',
+      type: 'relationship',
+      relationTo: 'group'
     }
   ],
 }

@@ -171,6 +171,7 @@ export interface Product {
   id: number;
   name?: string | null;
   description?: string | null;
+  group?: (number | null) | Group;
   updatedAt: string;
   createdAt: string;
 }
@@ -314,6 +315,7 @@ export interface MediaSelect<T extends boolean = true> {
 export interface ProductSelect<T extends boolean = true> {
   name?: T;
   description?: T;
+  group?: T;
   updatedAt?: T;
   createdAt?: T;
 }
